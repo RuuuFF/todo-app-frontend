@@ -11,6 +11,8 @@ const TodoForm = props => (
         id='description'
         className='form-control'
         placeholder='Adicione uma tarefa'
+        value={props.description}
+        onChange={props.handleChange}
       />
     </Grid>
 
