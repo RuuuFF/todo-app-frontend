@@ -1,7 +1,7 @@
 import {
   DESCRIPTION_CHANGED,
-  TODO_ADDED,
-  TODO_SEARCHED
+  TODO_SEARCHED,
+  TODO_CLEAR
 } from "../actions/actionTypes";
 
 const INITIAL_STATE = { description: "", list: [] }
@@ -12,7 +12,7 @@ function todoReducer(state = INITIAL_STATE, action) {
       return { ...state, description: action.payload }
     case TODO_SEARCHED:
       return { ...state, list: action.payload.data }
-    case TODO_ADDED:
+    case TODO_CLEAR:
       return { ...state, description: "" }
     default:
       return state
