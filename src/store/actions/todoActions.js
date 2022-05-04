@@ -25,8 +25,10 @@ export const search = () => {
 
 export const add = description => {
   return dispatch => {
-    axios.post(URL, { description })
-      .then(res => dispatch(clear()))
+    if (description.trim() !== "") {
+      axios.post(URL, { description: description.trim() })
+        .then(res => dispatch(clear()))
+    }
   }
 }
 
